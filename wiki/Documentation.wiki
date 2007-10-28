@@ -138,4 +138,4 @@ Which will produce the following diagram:
 
 [http://don.env.com.ua/files/jar2ikvm/JFreeChart-dependency-diagram.png]
 
-The same code for GeoTools will look like [http://don.env.com.ua/files/jar2ikvm/ikvmc_Geotools.txt this]. Imagine creating it by hands :). Here is a graph of it: [http://don.env.com.ua/files/jar2ikvm/GeoTools.png GeoTools.png]
+The same code for [http://www.geotools.org GeoTools] will look like [http://don.env.com.ua/files/jar2ikvm/ikvmc_Geotools.txt this]. Imagine creating it by hands :). Here is a graph of it: [http://don.env.com.ua/files/jar2ikvm/GeoTools.png GeoTools.png]
