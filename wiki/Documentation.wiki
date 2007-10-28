@@ -24,28 +24,23 @@ First I searched for a programs that can analyze dependencies between jars and f
 
 <Jar name="bcel-5.2.jar">
   <Summary>
-    ...
     <OutgoingDependencies>
     </OutgoingDependencies>
     <IncomingDependencies>
       <Jar>jaranalyzer-1.2.jar</Jar>
     </IncomingDependencies>
-    ...
   </Summary>
 </Jar>
 <Jar name="jaranalyzer-1.2.jar">
   <Summary>
-    ...
     <OutgoingDependencies>
       <Jar>bcel-5.2.jar</Jar>
       <Jar>ant.jar</Jar>
     </OutgoingDependencies>
     <IncomingDependencies>
     </IncomingDependencies>
-    ...
   </Summary>
 </Jar>
-...
 
 }}}
 
