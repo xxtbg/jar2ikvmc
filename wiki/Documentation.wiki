@@ -1,18 +1,16 @@
-#summary jar2ikvmc documentation
-
 = Downloads =
 
-Click _Downloads_ in order to downloads latest zipped binaries or sources. To get access to project Subversion repository use _Source_ section.
+Click [http://code.google.com/p/jar2ikvmc/downloads/list Downloads] in order to downloads latest zipped binaries or sources. To get access to project Subversion repository use [http://code.google.com/p/jar2ikvmc/source Source] section.
 
 = Feedback =
 
 Please post your comments on my blog: [http://don.env.com.ua/blog].
 
-You can also Submit an _Issue_ to report bug or suggest an improvement.
+You can also Submit an [http://code.google.com/p/jar2ikvmc/issues/list Issue] to report bug or suggest an improvement.
 
 = Itroduction =
 
-After using IKVM.NET to convert some Java programs to .NET I decided to write a small program that generates command-line script for ikvmc.exe program. It works perfect when original Java program consists only from one or few jar files. In this case command-line will look like:
+After using [http://www.ikvm.net/ IKVM.NET] to convert some Java programs to .NET I decided to write a small program that generates command-line script for ikvmc.exe program. It works perfect when original Java program consists only from one or few jar files. In this case command-line will look like:
  
 {{{ $ ikvmc junit.jar -target:library }}}
  
@@ -20,7 +18,7 @@ And as result we have JUnit library as a .NET assembly called junit.dll. But wha
 
 Detecting dependencies between all of them and writing manually all those _-r:<lib1.dll> -r:<lib2.dll> ..._ will not be so easy.
 
-First I searched for a programs that can analyze dependencies between jars and found JarAnalyzer. It was able to detect dependencies between all jar files in provided folder and then write them into xml:
+First I searched for a programs that can analyze dependencies between jars and found [http://www.kirkk.com/main/Main/JarAnalyzer JarAnalyzer]. It was able to detect dependencies between all jar files in provided folder and then write them into xml:
 {{{
    ...
    <Jar name="bcel-5.2.jar">
@@ -51,7 +49,7 @@ First I searched for a programs that can analyze dependencies between jars and f
    ...
 }}}
 
-Then all those dependencies were inserted into graph structure so that it would be possible to enumerate via all nodes in a proper order. QuickGraph was a good choice to solve that task:
+Then all those dependencies were inserted into graph structure so that it would be possible to enumerate via all nodes in a proper order. [http://www.codeproject.com/cs/miscctrl/quickgraph.asp QuickGraph] was a good choice to solve that task:
 {{{
     private static void GenerateIkvmcRunScript(BidirectionalGraph<string, Edge<string>> g, 
 
@@ -130,7 +128,7 @@ digraph G {
 }
 }}}
 
-First file contains command lines for ikvmc and the second file is a dot file in a Graphviz format showing all dependencies on a diagram.
+First file contains command lines for ikvmc and the second file is a dot file in a [http://www.graphviz.org/ Graphviz] format showing all dependencies on a diagram.
 
 The last file can be converted to a png format using the following command line:
 {{{
@@ -138,4 +136,6 @@ $ dot -Tpng -o"JFreeChart2Net.png" JFreeChart2Net.cmd.dot
 }}}
 Which will produce the following diagram:
 
-The same code for GeoTools will look like this. Imagine creating it by hands :). Here is a graph of it: GeoTools.png
+[http://don.env.com.ua/files/jar2ikvm/JFreeChart-dependency-diagram.png]
+
+The same code for GeoTools will look like [http://don.env.com.ua/files/jar2ikvm/ikvmc_Geotools.txt this]. Imagine creating it by hands :). Here is a graph of it: [http://don.env.com.ua/files/jar2ikvm/GeoTools.png GeoTools.png]
