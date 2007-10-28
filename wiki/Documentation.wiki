@@ -81,9 +81,10 @@ bin/
 $ jar2ikvmc
 
 Usage: jar2ikvmc <input folder containing jar files> <output script file name>
+}}}
 
 == Example (JFreeChart) ==
-
+{{{
 $ ls JFreeChart/
 gnujaxp.jar
 itext-2.0.2.jar
