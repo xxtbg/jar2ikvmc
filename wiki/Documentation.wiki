@@ -1,16 +1,16 @@
-= Summary =
+== Summary ==
 jar2ikvmc is a small tool which helps to convert a set of Java jar files into .NET dlls.
 
 It can be usefull when number of original jar files to be converted to .NET is substantial.
 Additionally to ikvmc command-line script it generates [http://www.graphviz.org/ Graphviz] file containing dependencies diagram.
 
-= Feedback =
+== Feedback ==
 
 Please post you feedback on Comments on my [http://don.env.com.ua blog].
 
 You can also Submit an Issue to report bug or suggest an improvement.
 
-= Itroduction =
+== Itroduction ==
 
 After using [http://www.ikvm.net/ IKVM.NET] to convert some Java programs to .NET I decided to write a small program that generates command-line script for ikvmc.exe program. It works perfect when original Java program consists only from one or few jar files. In this case command-line will look like:
 
@@ -81,7 +81,8 @@ bin/
 $ jar2ikvmc
 
 Usage: jar2ikvmc <input folder containing jar files> <output script file name>
-Example (JFreeChart)
+
+== Example (JFreeChart) ==
 
 $ ls JFreeChart/
 gnujaxp.jar
