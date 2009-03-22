@@ -21,15 +21,14 @@ along with this library; If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.Diagnostics;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Xml.Serialization;
 using System.IO;
 
 using QuickGraph;
 using QuickGraph.Algorithms;
-using QuickGraph.Serialization;
 
-namespace xml2ikvmc
+namespace jar2ikvmc
 {
     class Program
     {
@@ -92,16 +91,6 @@ namespace xml2ikvmc
                             }
                         }
 
-                        if (!exist)
-                        {
-                            g.AddEdge(new Edge<string>(dstJar.Text[0], jar.name));
-                        }
-                        else
-                        {
-                            Trace.WriteLine("Warning: loop detected, skipping dependency " + dstJar.Text[0] + " -> " + jar.name);
-                        }
-
-                        /* C# 3.5
                         if (!g.InEdges(dstJar.Text[0]).Any(v => v.Source == jar.name))
                         {
                             g.AddEdge(new Edge<string>(dstJar.Text[0], jar.name));
@@ -110,7 +99,6 @@ namespace xml2ikvmc
                         {
                             Trace.WriteLine("Warning: loop detected, skipping dependency " + dstJar.Text[0] + " -> " + jar.name);
                         }
-                         */
                     }
                 }
             }
@@ -128,15 +116,7 @@ namespace xml2ikvmc
             StreamWriter sw = new StreamWriter(path);
             foreach (string vertex in AlgoUtility.TopologicalSort<string, Edge<string>>(g))
             {
-                /* C# 3.5
                 IEnumerable<string> names = g.InEdges(vertex).Select<Edge<string>, string>(item => item.Source);
-                 */
-
-                IList<string> names = new List<string>();
-                foreach (IEdge<string> edge in g.InEdges(vertex))
-                {
-                    names.Add(edge.Source);
-                }
                 
                 string references = "";
                 foreach(string name in names)
