@@ -1,0 +1,5 @@
+22-03-2009: 
+- update to ikvm 0.38
+- add script to generate dlls from jars
+- add jars and ikvm binaries to repository
+- embed Filter.properties manually into jaranalyzer
